@@ -10,21 +10,21 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Création de l'objet de génération de données avec différentes transformations
 datagen = ImageDataGenerator(
-    rotation_range=20,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
-    shear_range=0.2,
-    zoom_range=0.2,
+    rotation_range=10,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    shear_range=0.1,
+    zoom_range=0.1,
     horizontal_flip=True,
-    vertical_flip=True,  # Ajout du flip vertical
-    brightness_range=(0.8, 1.2),  # Ajustement de la luminosité
-    channel_shift_range=30,  # Décalage des canaux
+    vertical_flip=True,  
+    brightness_range=(0.9, 1.1),  # Ajustement de la luminosité
+    channel_shift_range=10,  # Décalage des canaux
     fill_mode='nearest'
 )
 
 try:
     # Calcul du nombre d'images à générer par image originale
-    total_images_needed = 12000
+    total_images_needed = 4000
     current_image_count = len(os.listdir(input_dir))
     images_per_file = (total_images_needed - current_image_count) // current_image_count + 1
 
