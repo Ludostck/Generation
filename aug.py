@@ -24,7 +24,7 @@ datagen = ImageDataGenerator(
 
 try:
     # Calcul du nombre d'images à générer par image originale
-    total_images_needed = 15000
+    total_images_needed = 20000
     current_image_count = len(os.listdir(input_dir))
     images_per_file = (total_images_needed - current_image_count) // current_image_count + 1
 
